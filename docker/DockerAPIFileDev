@@ -1,0 +1,10 @@
+FROM python:3.8
+ENV DEVELOPMENT True
+ENV PYTHONUNBUFFERED 1
+
+RUN mkdir /api;
+WORKDIR /api
+
+ADD ./django_server/requirements.txt /api/
+
+RUN pip install -r /api/requirements.txt
